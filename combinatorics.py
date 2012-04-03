@@ -36,3 +36,18 @@ def choices(n, k):
     for i in range(1, k + 1):
         result = result * (n - i + 1) // i
     return result
+
+
+def stirling2(n, k):
+    """
+    Stirling numbers of second kind.
+    >>> stirling2(3, 4)
+    0
+    >>> stirling2(8, 5)
+    1050
+    """
+    result = 0
+    for i in range(k + 1):
+        result += (-1) ** (k - i) * choices(k, i) * i ** n
+    result //= fact(k)
+    return result
