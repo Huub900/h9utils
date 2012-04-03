@@ -20,3 +20,19 @@ def fact(n):
         return 1
     else:
         return reduce(mul, range(2, n + 1))
+
+
+def choices(n, k):
+    """
+    Binomial coefficient.
+    >>> choices(7, 0)
+    1
+    >>> choices(7, 1)
+    7
+    >>> choices(7, 5)
+    21
+    """
+    result = 1
+    for i in range(1, k + 1):
+        result = result * (n - i + 1) // i
+    return result
