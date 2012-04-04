@@ -1,9 +1,10 @@
 # vim: set fileencoding=utf-8 :
+"""Number theory utilities."""
 
 
 def gcd(a, b):
-    """
-    Greatest common divisor -- Euclidean algorithm.
+    """Greatest common divisor -- Euclidean algorithm.
+
     >>> gcd(0, 5)
     5
     >>> gcd(1071, 1029)
@@ -15,8 +16,8 @@ def gcd(a, b):
 
 
 def lcm(a, b):
-    """
-    Least common multiple.
+    """Least common multiple.
+
     >>> lcm(1071, 1029)
     52479
     """

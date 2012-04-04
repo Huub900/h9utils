@@ -1,11 +1,13 @@
 # vim: set fileencoding=utf-8 :
+"""Combinatorics utilities"""
+
 from functools import reduce
 from operator import mul
 
 
 def fact(n):
-    """
-    Calculates factorial of n.
+    """Factorial of n.
+
     >>> fact(0)
     1
     >>> fact(1)
@@ -13,7 +15,6 @@ def fact(n):
     >>> fact(5)
     120
     """
-
     if n < 0:
         raise ValueError
     elif n == 0 or n == 1:
@@ -23,8 +24,8 @@ def fact(n):
 
 
 def choices(n, k):
-    """
-    Binomial coefficient.
+    """Binomial coefficient.
+
     >>> choices(7, 0)
     1
     >>> choices(7, 1)
@@ -39,8 +40,8 @@ def choices(n, k):
 
 
 def stirling2(n, k):
-    """
-    Stirling numbers of second kind.
+    """Stirling numbers of second kind.
+
     >>> stirling2(3, 4)
     0
     >>> stirling2(8, 5)
