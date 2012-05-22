@@ -1,5 +1,5 @@
 from unittest import TestCase
-from combinatorics import fact, choices, stirling2
+from combinatorics import fact, choices, stirling2, n_parts
 
 
 class TestFact(TestCase):
@@ -31,3 +31,18 @@ class TestStirling2(TestCase):
     def test_more_subsets_than_items(self):
         self.assertEqual(stirling2(3, 4), 0)
 
+
+class TestNParts(TestCase):
+    def test_zero(self):
+        self.assertEqual(n_parts(0, 0), 1)
+
+    def test_equal(self):
+        self.assertEqual(n_parts(5, 5), 1)
+
+    def test_n_le_k(self):
+        self.assertEqual(n_parts(0, 3), 0)
+        self.assertEqual(n_parts(3, 7), 0)
+
+    def test_n_ge_k(self):
+        self.assertEqual(n_parts(11, 5), 10)
+        self.assertEqual(n_parts(11, 11), 1)

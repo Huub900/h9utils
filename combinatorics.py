@@ -30,3 +30,13 @@ def stirling2(n, k):
         result += (-1) ** (k - i) * choices(k, i) * i ** n
     result //= fact(k)
     return result
+
+
+def n_parts(n, k):
+    """Number partitions"""
+    if n == k:
+        return 1
+    elif n < k or k < 1:
+        return 0
+    else:
+        return n_parts(n - 1, k - 1) + n_parts(n - k, k)
